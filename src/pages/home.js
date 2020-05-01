@@ -20,10 +20,10 @@ class home extends Component {
     }
     render() {
         let recentPatientsMarkup = this.state.patients ? (
-        this.state.patients.map(patient => <Patient patient={patient}/>)
+        this.state.patients.map(patient => <Patient key={patient.patientID} patient={patient}/>)
         ) : <p>Loading...</p>
         return (
-            <Grid container spacing={16}> 
+            <Grid container spacing={4}> 
                 <Grid item sm={8} xs={12}>
                     {recentPatientsMarkup}
                 </Grid>
